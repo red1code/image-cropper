@@ -1,0 +1,15 @@
+{
+  "name": "image-cropper",
+  "version": "1.0.0",
+  "description": "A small Javascript app to crop images",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Redouane Bekkouche (@red1code)",
+  "license": "ISC",
+  "dependencies": {
+    "cropperjs": "^1.6.0"
+  }
+}
