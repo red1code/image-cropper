@@ -1,4 +1,4 @@
-Live preview HERE(https://red1code.github.io/image-cropper/)
+Live preview [HERE](https://red1code.github.io/image-cropper/)
 
 # Description
 
