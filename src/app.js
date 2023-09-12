@@ -1,4 +1,4 @@
-import {removeExt} from './utilities.js';
+import {removeExt, getExt} from './utilities.js';
 
 export default function App() {
 	const inputImg = document.getElementById('inputImg');
@@ -9,12 +9,14 @@ export default function App() {
 	const downloadLink = document.getElementById('downloadLink');
 	let cropper;
 	let imgName;
+	let imgExt;
 
 	cropBtn.style.display = 'none';
 	downladBtn.style.display = 'none';
 
 	inputImg.onchange = (evt) => {
 		const file = evt.target.files[0];
+		imgExt = getExt(file.name);
 		imgName = removeExt(file.name);
 		const reader = new FileReader();
 		reader.addEventListener('load', () => {
@@ -31,7 +33,7 @@ export default function App() {
 	cropBtn.onclick = () => {
 		let crop = cropper.getCroppedCanvas().toDataURL('image/png');
 		croppedImg.src = crop;
-		downloadLink.download = imgName + '-cropped';
+		downloadLink.download = `${imgName}-cropped.${imgExt}`;
 		downloadLink.href = crop;
 		downladBtn.style.display = 'block';
 	};
